@@ -9,7 +9,9 @@ pipeline {
     stages {
 
         stage('Build Image') {
-            sh './build.sh'
+            steps {
+                sh './build.sh'
+            }
         } // Build Image
 
     } // stages
