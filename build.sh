@@ -2,14 +2,12 @@
 
 set -ex
 
-command="img"
 tag='eldermael/custom-jenkins-agent:latest'
 
 if [[ ! "${CI}" == "true" ]]; then
-  command="docker"
-  "${command}" login
+  docker login
 fi
 
-"${command}" build -t  "${tag}" .
+docker build -t  "${tag}" .
 
-"${command}" push "${tag}"
+docker push "${tag}"
