@@ -1,0 +1,7 @@
+name: "Mael's Custom Jenkins Agent Image"
+on: [ push ]
+jobs:
+  Build-Image:
+    runs-on: ubuntu-latest
+    steps:
+      - run: './build.sh'
